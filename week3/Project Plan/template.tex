@@ -1,0 +1,106 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{reflection}[2][Reflection]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{proposition}[2][Proposition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+
+\begin{document}
+
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+
+%\renewcommand{\qedsymbol}{\filledbox}
+
+\title{CS225 Week1 Assignment Part 3}%replace X with the appropriate number
+\author{Ziwei Wu\\ %replace with your name
+Student Number: 933296824} %if necessary, replace with your course title
+
+\maketitle
+
+%note * make the section un-numbered.
+\section*{Section 3.1}
+\begin{exercise}{18}
+%Note 1: The * tells LaTeX not to number the lines.  If you remove the *, be sure to remove it below, too.
+%Note 2: Inside the align environment, you do not want to use $-signs.  The reason for this is that this is already a math environment. This is why we have to include \text{} around any text inside the align environment.
+Let D be the set of all students at your school,
+and let M(s) be ``s is a math major", let C(s) be ``s is a
+computer science student," and let E (s ) be ``s is an
+engineering student." Express each of the following statements
+using quantifiers, variables, and the predicates M(s),C(s), and E(s).\\
+a. There is an engineering student who is a math major.\\
+b. Every computer science student is an engineering students. \\
+c. No computer science students are engineering students.\\
+d. Some computer science students are also math majors.\\
+e. Some computer science students are engineering students and some are not.\\
+\\
+\textbf{Solutions:}\\
+a. s\ \in D | E(s) \wedge M(s)\\
+b. \forall s \in D | C(s) \rightarrow E(s)\\
+c. \forall s \in D | C(s) \rightarrow \sim E(s)\\
+d. \exists s \in D | C(s) \wedge E(s), and\ \exists s \in D | C(s)\wedge \sim E(s)\\
+\end{exercise}
+
+\section*{Section 3.2}
+\begin{exercise}{2}
+Which of the following is a negation for ``All dogs are loyal"? More than one answer may be correct.\\
+a. All dogs are disloyal.\\
+b. No dogs are loyal.\\
+c. Some dogs are disloyal.\\
+d. Some dogs are loyal.\\
+e. There is a disloyal animal that is not a dog. \\
+f. There is a dog that is disloyal.\\
+g. No animals that are not dogs are loyal.\\
+h. Some animals that are not dogs are loyal.\\
+\\
+\textbf{Solution:}\\
+let dog=x, domain=D, loyal=L\\
+All dogs are loyal in formal language:\\
+$$ \forall x \in D, L(x) $$\\
+Its negation in formal language:\\
+$$ \exists x \in D, \sim L(x)$$\\
+Therefore, the choices best represents the negation is c and f.
+\end{exercise}
+
+\begin{exercise}{4}
+Write an informal negation for each of the following statements.
+Be careful to avoid negations that are ambiguous.\\
+a. All dogs are friendly.\\
+b. All people are happy.\\
+c. Some suspicions were substantiated.\\
+d. Some estimates are accurate. \\
+\\
+\textbf{Solutions:}\\
+a. Some dogs are not friendly.\\
+b. Some people are not happy.\\
+c. All suspicions were unsubstantiated.\\
+d. All estimates are inaccurate.\\
+
+\end{exercise}
+
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+
+\end{document}
