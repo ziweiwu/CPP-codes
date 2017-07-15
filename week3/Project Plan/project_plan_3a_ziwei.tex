@@ -1,0 +1,99 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{float,amsmath,amsthm,amssymb,caption}
+\usepackage{algorithmic, algorithm}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{reflection}[2][Reflection]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{proposition}[2][Proposition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+
+\begin{document}
+
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+
+%\renewcommand{\qedsymbol}{\filledbox}
+
+\title{CS161 Week3 Project Plan Part a}%replace X with the appropriate number
+\author{Ziwei Wu} %replace with your name
+ %if necessary, replace with your course title
+
+\maketitle
+
+%note * make the section un-numbered.
+
+%Note 1: The * tells LaTeX not to number the lines.  If you remove the *, be sure to remove it below, too.
+%Note 2: Inside the align environment, you do not want to use $-signs.  The reason for this is that this is already a math environment. This is why we have to include \text{} around any text inside the align environment.
+\begin{exercise}{3A}\\
+Write a program that asks the user how many integers they would like to enter.
+You can assume they will enter a number $>= 1$.
+The program will then prompt the user to enter that many integers.
+After all the numbers have been entered,
+the program should display the largest and smallest of those numbers.\\
+\begin{table}[H]
+\centering
+\caption*{Testing Cases}
+\label{my-label}
+\begin{tabular}{|c|c|}
+\hline
+Input & Output  \\
+\hline
+1, 2, 3, 4  &  min:1, max:4 \\
+\hline
+999, 1, -1223231231, 999, -122323123 & min: -122323123, max: 999 \\
+\hline
+5668, 5668, 5668 & min: 5668, max: 5668 \\
+\hline
+-1001, -1, 0, - 506 & min: -1001, max: 0\\
+\hline
+0 & min: 0, max: 0\\
+\hline
+\end{tabular}
+\end{table}
+\noindent
+\textbf{Pseudocode:}\\
+Ask the user how many integers he/she wants to enter.\\
+Initialize an variable called $InputNum$ to store this value.\\
+\\
+Initialize two variables called $minNum$ and $maxNum$.\\
+Initialize a variable called $num$.\\
+\\
+Ask the user to enter $InputNum$ number of integers.\\
+Store the first input to $num$.\\
+Set both $minNum$ and $maxNum$ to the value of $num$.\\
+
+\begin{algorithmic}[H]
+    \FOR{from zero to $InputNum -1 $}
+    \STATE{Reinitialize $num$ to zero}
+    \STATE{Store the input to $num$}
+    \IF {$num < minNum$}
+    \STATE {Set $minNum$ to $num$}
+
+    \ELSIF {$num > maxNum$}
+    \STATE {Set $maxNum$ to $num$}
+    \ENDIF
+    \ENDFOR
+\end{algorithmic}
+Display the variable $minNum$ and $maxNum$ to the user.
+\end{exercise}
+
+\end{document}
