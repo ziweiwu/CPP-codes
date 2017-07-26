@@ -1,7 +1,7 @@
 /*****************************************************************************
 ** Author: Wu, Ziwei
 ** Date: 2017-07-24
-** Description: a header file for class Quadratic. It includes member variables
+** Description: a header file for class Entree. It includes member variables
    a, b, c; a default constructor prototype that sets the member variables to 
    1, a constructor protoype that takes three double parameters; member 
    function protoypes including: getA, getB, getC, setA, setB, setC, valueFor, 
@@ -24,7 +24,7 @@ class Quadratic
     public:
         //default constructors: one with no argument, one with three parameters
         Quadratic();
-        Quadratic(double, double, double );
+        Quadratic(double a, double b, double c);
 
         //method prototypes
         void setA(double);
