@@ -1,5 +1,4 @@
-# CS161
-homework for CS161  (Introduction to Compute Science in CPP)
+Learning C++ by writing some codes
 
 topics:
 - identifiers and primitive data types
